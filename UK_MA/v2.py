@@ -80,7 +80,7 @@ def process_product(row):
 # Main function to manage threading and periodic saving
 def main():
     # Create a thread pool with 5 workers
-    with ThreadPoolExecutor(max_workers=5) as executor:
+    with ThreadPoolExecutor(max_workers=3) as executor:
         futures = {executor.submit(process_product, row): index for index, row in df.iterrows()}
         completed_count = 0
 
